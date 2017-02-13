@@ -1,4 +1,4 @@
 from mine import *
 
-mc = minecraft.Minecraft()
+mc = Minecraft()
 mc.postToChat("Hello World!")
