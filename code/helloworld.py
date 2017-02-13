@@ -1,6 +1,4 @@
-import mcpi.minecraft as minecraft
-import server
-import sys
+from mine import *
 
 mc = minecraft.Minecraft()
 mc.postToChat("Hello World!")
