@@ -1,5 +1,3 @@
-import sys
-sys.path.append('./mcpipy/')
 from mine import *
 import text
 import fonts
