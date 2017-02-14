@@ -1,4 +1,6 @@
-from background.text_to_blocks_code import *
+import sys, os
+sys.path.insert(0, os.path.abspath("."))
+from text_to_blocks_code import *
 
 #############################################
 #############################################
