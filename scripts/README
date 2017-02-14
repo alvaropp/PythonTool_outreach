@@ -1,0 +1,13 @@
+Put the ResetWorld.bat script into the .minecraft folder inside appdata/roaming
+with a backup world called World1 in a folder called BackUpWorld. It will remove the current World1 and replace it with the backup world.
+
+Directory structure should be like so:
+
+Inside .minecraft
+
+.
+├── ResetWorld.bat
+├── BackUpWorld
+│   ├── World1
+├── saves
+│   ├── World1
