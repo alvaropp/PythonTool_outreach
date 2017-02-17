@@ -3,7 +3,6 @@
 #
 from mine import *
 import math
-import time
 
 def test_area_clear():
     mc.setBlocks(-59, 0, 9, -21, 76, 47, block.AIR)
@@ -76,7 +75,7 @@ def rectangularPrism(x1, y1, z1, x2, y2, z2, block):
                 mc.setBlock(x_M, y_M, z_M, block)
 
 
-def build_house(pos, l=7, h=8):
+def build_house(l=7, h=8):
     """House Builder
        -------------
 
@@ -86,7 +85,6 @@ def build_house(pos, l=7, h=8):
 
     Parameters
     ----------
-    pos : Vec3, position at which the house should be built
     l : int, side length of house
     h : int, height of walls of house (roof height is inferred from this)
 
@@ -95,6 +93,8 @@ def build_house(pos, l=7, h=8):
     NONE : constructs house in Minecraft world and prints "Home sweet home" to
     chat
     """
+    mc = Minecraft()
+    pos = mc.player.getTilePos()
     x, y, z = mine_to_sci_coord(pos.x, pos.y, pos.z)
     house(x, y, z, l, h)
     mc.postToChat("Home sweet home!")
@@ -105,7 +105,6 @@ def house(x1, y1, z1, l, h):
     x1 : int, starting x pos
     y1 : int, starting y pos
     z1 : int, starting z pos
-    rot : float, direction player is facing
     l : int, side length
     h : int, wall height
     """
