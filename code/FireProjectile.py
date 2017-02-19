@@ -1,4 +1,3 @@
-import sys, os
 from background.grenade_func import *
 
 #############################################

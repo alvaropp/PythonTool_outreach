@@ -1,4 +1,3 @@
-import sys, os
 from background.build_house_code import *
 
 length = 7

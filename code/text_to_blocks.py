@@ -1,4 +1,3 @@
-import sys, os
 from background.text_to_blocks_code import *
 
 #############################################
