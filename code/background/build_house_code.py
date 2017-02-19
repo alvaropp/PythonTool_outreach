@@ -3,6 +3,10 @@
 #
 from mine import *
 import math
+import time
+
+mc = Minecraft()
+
 
 def test_area_clear():
     mc.setBlocks(-59, 0, 9, -21, 76, 47, block.AIR)
@@ -105,6 +109,7 @@ def house(x1, y1, z1, l, h):
     x1 : int, starting x pos
     y1 : int, starting y pos
     z1 : int, starting z pos
+    rot : float, direction player is facing
     l : int, side length
     h : int, wall height
     """
@@ -215,5 +220,4 @@ if __name__ == "__main__":
                                                                     test_pos.y,
                                                                     test_pos.z)
     test_area_clear()
-    build_house(test_pos)
-    #house(test_pos_scix, test_pos_sciy, test_pos_sciz, 17, 5)
+    house(test_pos_scix, test_pos_sciy, test_pos_sciz, 7, 8)
