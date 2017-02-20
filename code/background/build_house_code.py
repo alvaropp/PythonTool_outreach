@@ -1,5 +1,5 @@
 #
-# Code by Matthew Mostert
+# Code by Matthew Mostert utilising code by Alexander Pruss and under the MIT license
 #
 from mine import *
 import math
@@ -98,10 +98,24 @@ def build_house(l=7, h=8):
     chat
     """
     mc = Minecraft()
-    pos = mc.player.getTilePos()
-    x, y, z = mine_to_sci_coord(pos.x, pos.y, pos.z)
-    house(x, y, z, l, h)
-    mc.postToChat("Home sweet home!")
+    if 3 <= l <= 30 and 3 <= h <= 30:
+        pos = mc.player.getTilePos()
+        x, y, z = mine_to_sci_coord(pos.x, pos.y, pos.z)
+        house(x, y, z, l, h)
+        mc.postToChat("Home sweet home!")
+    else:
+        if 3 <= l <= 30:
+            if h > 30:
+                mc.postToChat("Height is too big! Pick a number between 3 and 30.")
+            elif h < 3:
+                mc.postToChat("Height is too small! Pick a number between 3 and 30.")
+        elif 3 <= h <= 30:
+            if l > 30:
+                mc.postToChat("Length is too big! Pick a number between 3 and 30.")
+            elif l < 3:
+                mc.postToChat("Length is too small! Pick a number between 3 and 30.")
+        else:
+            mc.postToChat("Length and height are both wrong! Pick two numbers between 3 and 30.")
 
 
 def house(x1, y1, z1, l, h):
@@ -116,7 +130,7 @@ def house(x1, y1, z1, l, h):
     # adding offset from given position in case position is player occupied
     x1 -= int(l/2)
     y1 += 3
-
+    z1 += 1
     # building walls and hollowing out
     rectangularPrism(x1, y1, z1, x1+l-1, y1+l-1, z1+h-1, block.COBBLESTONE)
     rectangularPrism(x1+1, y1+1, z1, x1+l-1-1, y1+l-1-1, z1+h-1, block.AIR)
