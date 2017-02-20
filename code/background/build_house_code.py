@@ -130,7 +130,7 @@ def house(x1, y1, z1, l, h):
     # adding offset from given position in case position is player occupied
     x1 -= int(l/2)
     y1 += 3
-    z1 += 1
+
     # building walls and hollowing out
     rectangularPrism(x1, y1, z1, x1+l-1, y1+l-1, z1+h-1, block.COBBLESTONE)
     rectangularPrism(x1+1, y1+1, z1, x1+l-1-1, y1+l-1-1, z1+h-1, block.AIR)
