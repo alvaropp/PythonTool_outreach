@@ -157,7 +157,7 @@ def house(x1, y1, z1, l, h):
     if h <= math.ceil(l/2):
         rectangularPrism(x_l, y1, z_t, x_r,
                          y1+l-1, z_t, block.WOOD_PLANKS)
-    elif l%2 != 0 and l < 2*h - 1: # if l is odd and less than double height - 1
+    elif l%2 != 0 and l <= 2*h - 1: # if l is odd and less than double height - 1
         rectangularPrism(x1+(l/2), y1, z_t, x1+(l/2),
                          y1+l-1, z_t, block.WOOD_PLANKS)
 
