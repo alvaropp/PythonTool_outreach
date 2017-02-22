@@ -6,6 +6,8 @@ Xcopy /E /I /y BackUpScripts\* PythonToolScripts\
 SET /P LASTNUMOFRUNS= < NumberOfRuns.dat
 SET /A NUMOFRUNS=%LASTNUMOFRUNS%+1
 echo %NUMOFRUNS%
-
-echo off
 > NumberOfRuns.dat echo %NUMOFRUNS%
+
+SET /P EngagementScore="Enter Engagement Score: "
+>> EngagementScore.dat echo %EngagementScore%
+
