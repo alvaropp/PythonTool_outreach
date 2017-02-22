@@ -1,9 +1,9 @@
 #!/bin/sh
 
 rm -r saves/World1
-rm PythonToolScipts/*
+rm PythonToolScripts/*
 cp -r BackUpWorld/World1 saves/
-cp -r BackUpScripts/* PythonToolScipts/
+cp -r BackUpScripts/* PythonToolScripts/
 
 LastNumOfRuns=$(<NumberOfRuns.dat)
 NumOfRuns=$(( LastNumOfRuns + 1 ))
