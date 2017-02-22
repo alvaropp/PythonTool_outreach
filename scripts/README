@@ -1,5 +1,10 @@
 Put the ResetWorld.bat script into the .minecraft folder inside appdata/roaming
-with a backup world called World1 in a folder called BackUpWorld. It will remove the current World1 and replace it with the backup world.
+with a backup world called World1 in a folder called BackUpWorld.
+It will remove the current World1 and replace it with the backup world.
+It will also remove all the scripts inside of PythonToolScripts and copy in
+all the scripts from the BackUpScripts directory. It increments the number of runs
+inside of the NumberOfRuns.dat file and you must enter a score (between 0 and 5) for
+the engagement of the participant that is appended to the EngagementScores.dat file.
 
 Directory structure should be like so:
 
@@ -16,3 +21,4 @@ Inside .minecraft
 ├── PythonToolScripts
 │   ├── scripts...
 ├── NumberOfRuns.dat
+├── EngagementScores.dat

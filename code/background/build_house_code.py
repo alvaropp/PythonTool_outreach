@@ -159,7 +159,6 @@ def house(x1, y1, z1, l, h):
                          y1+l-1, z_t, block.WOOD_PLANKS)
     elif l%2 != 0 and l < 2*h - 1: # if l is odd and less than double height - 1
         rectangularPrism(x1+int(l/2), y1, z_t, x1+int(l/2),
-                         y1+l-1, z_t, block.WOOD_PLANKS)
 
     # adding floor
     rectangularPrism(x1, y1, z1-1, x1+l-1, y1+l-1, z1-1,
