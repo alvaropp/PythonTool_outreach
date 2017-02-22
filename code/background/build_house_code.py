@@ -100,8 +100,9 @@ def build_house(l=7, h=8):
     mc = Minecraft()
     if 3 <= l <= 30 and 3 <= h <= 30:
         pos = mc.player.getTilePos()
+        rot = mc.player.getRotation()
         x, y, z = mine_to_sci_coord(pos.x, pos.y, pos.z)
-        house(x, y, z, l, h)
+        house(x, y, z, rot, int(l), int(h))
         mc.postToChat("Home sweet home!")
     else:
         if 3 <= l <= 30:
@@ -118,7 +119,7 @@ def build_house(l=7, h=8):
             mc.postToChat("Length and height are both wrong! Pick two numbers between 3 and 30.")
 
 
-def house(x1, y1, z1, l, h):
+def house(x1, y1, z1, rot, l, h):
     """
     x1 : int, starting x pos
     y1 : int, starting y pos
@@ -127,10 +128,19 @@ def house(x1, y1, z1, l, h):
     l : int, side length
     h : int, wall height
     """
-    # adding offset from given position in case position is player occupied
-    x1 -= int(l/2)
-    y1 += 3
-
+    # adding offset from given position for rotation
+    if -135 < rot < -45:
+        x1 -= int(l/2)
+        y1 += 3
+    elif -45 < rot < 45:
+        x1 += 3
+        y1 -= 1
+    elif 45 < rot < 135:
+        x1 += 1
+        y1 -= (l+3)
+    else:
+        x1 -= (l+3)
+        y1 -= 1
     # building walls and hollowing out
     rectangularPrism(x1, y1, z1, x1+l-1, y1+l-1, z1+h-1, block.COBBLESTONE)
     rectangularPrism(x1+1, y1+1, z1, x1+l-1-1, y1+l-1-1, z1+h-1, block.AIR)
