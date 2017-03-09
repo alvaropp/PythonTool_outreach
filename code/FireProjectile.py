@@ -3,4 +3,7 @@ from background.grenade_func import *
 #############################################
 #############################################
 
-MakeProjectile(100, "earth")
+speed = 100
+planet = "earth"
+
+MakeProjectile(speed, planet)
