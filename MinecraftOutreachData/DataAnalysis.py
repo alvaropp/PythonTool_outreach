@@ -1,6 +1,6 @@
 from glob import glob
 
-Directories = glob("*/")
+Directories = glob("./SED/*")
 
 filename = "EngagementScore.dat"
 
